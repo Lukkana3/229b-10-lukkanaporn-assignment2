@@ -5,7 +5,7 @@ using UnityEngine;
 public class Airplane : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float enginePowerThrust, lift, drag, angularDrag/*แรงเลี้ยว*/;
+    [SerializeField] private float enginePowerThrust, liftBooster, drag, angularDrag/*แรงเลี้ยว*/;
 
     void FixedUpdate()
     {
@@ -14,5 +14,9 @@ public class Airplane : MonoBehaviour
         {
             rb.AddForce(Vector3.forward * enginePowerThrust);
         }
+
+        //Add Lift
+        Vector3 lift = Vector3.Project(rb.velocity, Vector3.forward);
+        rb.AddForce(Vector3.up * lift.magnitude * liftBooster);
     }
 }
