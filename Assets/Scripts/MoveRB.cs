@@ -5,7 +5,7 @@ using UnityEngine.Windows;
 
 public class MoveRB : MonoBehaviour
 {
-    [SerializeField] private float force = 5f;
+    [SerializeField] private float force = 50f;
     [SerializeField] private Rigidbody rb;
 
     // Start is called before the first frame update
