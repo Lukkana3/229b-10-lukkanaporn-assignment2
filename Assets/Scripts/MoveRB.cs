@@ -19,19 +19,19 @@ public class MoveRB : MonoBehaviour
     {
         if (UnityEngine.Input.GetKey(KeyCode.W))
         {
-            rb.AddForce(-Vector3.forward * force);
+            rb.AddForce(Vector3.forward * force);
         }
         if (UnityEngine.Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(Vector3.forward * force);
+            rb.AddForce(-Vector3.forward * force);
         }
         if (UnityEngine.Input.GetKey(KeyCode.A))
         {
-            rb.AddForce(-Vector3.left * force);
+            rb.AddForce(Vector3.left * force);
         }
         if (UnityEngine.Input.GetKey(KeyCode.D))
         {
-            rb.AddForce(-Vector3.right * force);
+            rb.AddForce(Vector3.right * force);
         }
 
     }
