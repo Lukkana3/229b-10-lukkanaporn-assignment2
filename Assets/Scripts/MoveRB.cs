@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
+using Input = UnityEngine.Input;
 
 public class MoveRB : MonoBehaviour
 {
-    [SerializeField] private float force = 50f;
+    [SerializeField] private float force = 10f;
     [SerializeField] private Rigidbody rb;
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class MoveRB : MonoBehaviour
         }
         if (UnityEngine.Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(-Vector3.forward * force);
+            rb.AddForce(Vector3.back * force);
         }
         if (UnityEngine.Input.GetKey(KeyCode.A))
         {
@@ -35,4 +35,5 @@ public class MoveRB : MonoBehaviour
         }
 
     }
+   
 }

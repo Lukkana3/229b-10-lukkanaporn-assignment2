@@ -18,5 +18,9 @@ public class Airplane : MonoBehaviour
         //Add Lift
         Vector3 lift = Vector3.Project(rb.velocity, Vector3.forward);
         rb.AddForce(Vector3.up * lift.magnitude * liftBooster);
+
+        //Add Drag แรงต้าน
+        rb.drag = rb.velocity.magnitude * drag;
+        rb.angularDrag = rb.velocity.magnitude * angularDrag;
     }
 }
